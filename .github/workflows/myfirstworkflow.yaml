@@ -11,8 +11,8 @@ jobs:
         run: echo "The code has been pushed!"
       - name: Give me the OS version
         run: cat /etc/os-release
-system-info:
-  name: Check Network and Kernel
+  system-info:
+    name: Check Network and Kernel
     runs-on: macos-latest  # Using a different OS!
     steps:
       - name: Show Network Config
