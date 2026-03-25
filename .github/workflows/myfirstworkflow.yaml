@@ -19,4 +19,17 @@ jobs:
         run: ifconfig
         
       - name: Show System Controls
-        run: sysctl -a | grep machdep.cpu.brand_string   
+        run: sysctl -a | grep machdep.cpu.brand_string 
+  # This job waits for BOTH say-hello and system-info
+  report-status:
+    needs: [say-hello, system-info]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Both initial jobs passed. Reporting success!"
+
+  # This job only waits for report-status
+  archive-logs:
+    needs: report-status
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Archiving the final results..."
