@@ -1,0 +1,7 @@
+jobs:
+  say-hello:                # The Technical ID (No spaces!)
+    name: Greet the Team    # The Display Name (Spaces allowed!)
+    runs-on: ubuntu-latest
+    steps:
+      - name: My First Step # Step name
+        run: echo "Hi!"
