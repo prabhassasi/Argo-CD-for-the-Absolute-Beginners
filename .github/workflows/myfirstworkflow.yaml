@@ -1,7 +1,11 @@
+name: Greet the User
+on: [push]  # This is the "Event Trigger" that is missing!
+
 jobs:
-  say-hello:                # The Technical ID (No spaces!)
-    name: Greet the Team    # The Display Name (Spaces allowed!)
+  say-hello:
     runs-on: ubuntu-latest
     steps:
-      - name: My First Step # Step name
-        run: echo "Hi!"
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run a greeting
+        run: echo "The code has been pushed!"
