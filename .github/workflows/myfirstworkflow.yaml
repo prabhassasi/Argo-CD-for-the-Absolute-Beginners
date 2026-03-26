@@ -1,5 +1,8 @@
 name: Greet the User
 on: [push]  # This is the "Event Trigger" that is missing!
+    schedule:
+      - cron: '*/5 * * * *'
+    workflow_dispatch:
 
 jobs:
   say-hello:
